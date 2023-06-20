@@ -12,6 +12,7 @@ authors = [
 ]
 description = "Implementation of monotonic alignment by cpp extension of PyTorch."
 readme = "README.md"
+license = {file = "LICENSE"}
 urls = {url = "https://github.com/tky823/monotonic_align"}
 requires-python = ">=3.7, <3.11"
 dependencies = [
