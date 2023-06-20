@@ -45,7 +45,7 @@ def viterbi_monotonic_alignment_py(
 
     _, max_tgt_length, max_src_length = log_probs.size()
 
-    hard_align = torch.full_like(log_probs, fill_value=0, dtype=torch.long)
+    hard_align = torch.zeros_like(log_probs, dtype=torch.long)
 
     for batch_idx, log_prob in enumerate(log_probs):
         prob = torch.exp(log_prob)
