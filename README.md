@@ -36,6 +36,7 @@ True
 To take the best advantage of C++ implementation, you might need to fix `setup.py`:
 
 ```python
+# Not all the environment support OpenMP, be careful.
 class BuildExtension(_BuildExtension):
     cpp_extensions = [
         {
