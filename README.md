@@ -31,3 +31,22 @@ torch.Size([4, 60, 26])
 >>> torch.equal(hard_attn_py, hard_attn_cpp)
 True
 ```
+
+## Note
+To take the best advantage of C++ implementation, you might need to fix `setup.py`:
+
+```python
+class BuildExtension(_BuildExtension):
+    cpp_extensions = [
+        {
+            "name": "monotonic_align._cpp_extensions.monotonic_align",
+            "sources": [
+                "cpp_extensions/monotonic_align.cpp",
+            ],
+            # add extra_compile_args
+            "extra_compile_args": [
+                "-fopenmp",
+            ],
+        },
+    ]
+```
